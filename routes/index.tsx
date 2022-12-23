@@ -1,9 +1,13 @@
 import { Head } from "$fresh/runtime.ts";
 import Counter from "../islands/Counter.tsx";
 
+import Header from "../components/Navigationbar.tsx";
+
+
 export default function Home() {
   return (
     <>
+    <Header/>
       <Head>
         <title>Fresh App</title>
       </Head>
