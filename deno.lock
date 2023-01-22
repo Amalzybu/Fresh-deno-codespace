@@ -126,7 +126,10 @@
     "https://esm.sh/v102/twind@0.16.17/twind.d.ts": "1f873cb0b50cb28ce11ff8655d68df028f46095f969920c78421b801c84fb573"
   },
   "npm": {
-    "specifiers": { "gun@0.2020.1239": "gun@0.2020.1239" },
+    "specifiers": {
+      "gun": "gun@0.2020.1239",
+      "gun@0.2020.1239": "gun@0.2020.1239"
+    },
     "packages": {
       "@peculiar/asn1-schema@2.3.3": {
         "integrity": "sha512-6GptMYDMyWBHTUKndHaDsRZUO/XMSgIns2krxcm2L7SEExRHwawFvSwNBhqNPR9HJwv3MruAiF1bhN0we6j6GQ==",

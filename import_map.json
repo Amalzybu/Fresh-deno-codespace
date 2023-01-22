@@ -9,6 +9,6 @@
     "twind": "https://esm.sh/twind@0.16.17",
     "twind/": "https://esm.sh/twind@0.16.17/",
     "postgres": "https://deno.land/x/postgres@v0.17.0/mod.ts",
-    "gun": "npm:/gun@0.2020.1239"
+    "gun": "npm:/gun"
   }
 }
