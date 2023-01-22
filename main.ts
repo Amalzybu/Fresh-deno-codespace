@@ -9,5 +9,7 @@ import manifest from "./fresh.gen.ts";
 
 import twindPlugin from "$fresh/plugins/twind.ts";
 import twindConfig from "./twind.config.ts";
+import Gun from "gun";
 
 await start(manifest, { plugins: [twindPlugin(twindConfig)] });
+var gun = Gun({web: 5343, peers: 5});

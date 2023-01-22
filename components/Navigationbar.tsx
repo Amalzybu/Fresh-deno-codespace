@@ -1,5 +1,4 @@
-import LemonIcon from "https://deno.land/x/tabler_icons_tsx@0.0.1/tsx/lemon-2.tsx";
-
+import IconAlien from "https://deno.land/x/tabler_icons_tsx@0.0.2/tsx/alien.tsx"
 type Props = {
   active: string;
 };
@@ -7,17 +6,18 @@ type Props = {
 export default function Header({ active }: Props) {
   const menus = [
     { name: "Home", href: "/" },
-    { name: "Components", href: "/components" },
-    { name: "Docs", href: "/docs" },
+    { name: "item1", href: "/components" },
+    { name: "item2", href: "/docs" },
   ];
 
   return (
     <div class="bg-indigo-300 mx-auto flex gap-3 py-6 px-8  justify-between ">
       <div class="flex items-center flex-1">
-        <LemonIcon />
+        <IconAlien />
         
         <div class="text-2xl  ml-1 font-bold">
-        TestMyApp
+        UseMeWise
+
         </div>
       </div>
       <ul class="flex items-center gap-6">
