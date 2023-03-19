@@ -7,12 +7,14 @@ import CommonFooter from "../components/Footer.tsx";
 
 export default function Home() {
   return (
-    <>
+    <div class="min-h-screen grid grid-cols-1" style="grid-template-rows: auto 1fr auto;">
     <Header/>
       <Head>
         <title>UseMeWise</title>
       </Head>
+      <main class="max-w-screen-lg mx-auto p-4">
       <div class="p-4 mx-auto max-w-screen-md">
+        
       <h2 class="pt-5 md:pt-10 pb-3 md:pb-5 font-semibold text-center text-6xl md:text-8xl antialiased hover:subpixel-antialiased tracking-wide text-red-600 hover:text-sky-400 ">USE me WISE</h2>
       <div class="flex flex-col space-y-4 mt-8">
         <button type="button" class="place-content-center w-full inline-block px-6 py-4 border-2 border-black text-red-600 font-bold text-xs leading-normal uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out flex space-x-4">
@@ -28,8 +30,10 @@ export default function Home() {
             <span>Sign in with Google</span>
           </button>
         </div>
+        
       </div>
+      </main>
       <CommonFooter/>
-    </>
+    </div>
   );
 }

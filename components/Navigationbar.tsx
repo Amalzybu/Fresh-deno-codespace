@@ -11,7 +11,7 @@ export default function Header({ active }: Props) {
   ];
 
   return (
-    <div class=" mx-auto flex gap-3 py-6 px-8  justify-between ">
+    <header class="px-3 lg:px-14 h-12 lg:h-20 text-gray-500 flex justify-between items-center" >
       <div class="flex items-center flex-1">
         <IconAlien />
         
@@ -33,6 +33,6 @@ export default function Header({ active }: Props) {
           </li>
         ))}
       </ul>
-    </div>
+    </header>
   );
 }

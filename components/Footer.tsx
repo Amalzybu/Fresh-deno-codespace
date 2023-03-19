@@ -5,9 +5,8 @@ type Props = {
 export default function CommonFooter({ active }: Props) {
 
   return (
-    <footer class="bg-white dark:bg-gray-900">
-    <div class="px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
-        <span class="text-sm text-gray-500 dark:text-gray-300 sm:text-center">© 2023 <a href="https://flowbite.com/">Flowbite™</a>. All Rights Reserved.
+    <footer class="px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
+        <span class="text-sm text-gray-500 dark:text-gray-300 sm:text-center">© 2023 <a href="https://flowbite.com/">Use.me.Wise™</a>. All Rights Reserved.
         </span>
         <div class="flex mt-4 space-x-6 sm:justify-center md:mt-0">
             <a href="#" class="text-gray-400 hover:text-gray-900 dark:hover:text-white">
@@ -31,7 +30,6 @@ export default function CommonFooter({ active }: Props) {
                 <span class="sr-only">Dribbble account</span>
             </a>
         </div>
-    </div>
 </footer>
 
   );
