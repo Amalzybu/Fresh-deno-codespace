@@ -6,12 +6,12 @@ type Props = {
 export default function Header({ active }: Props) {
   const menus = [
     { name: "Home", href: "/" },
-    { name: "item1", href: "/components" },
-    { name: "item2", href: "/docs" },
+    { name: "About", href: "/components" },
+    { name: "Privacy & Policy", href: "/privacy-policy" },
   ];
 
   return (
-    <header class="px-3 lg:px-14 h-12 lg:h-20 text-gray-500 flex justify-between items-center" >
+    <header class=" px-3 lg:px-14 h-12 lg:h-20 text-gray-500 flex justify-between items-center" >
       <div class="flex items-center flex-1">
         <IconAlien />
         
