@@ -2,7 +2,7 @@ import { Head } from "$fresh/runtime.ts";
 
 import Header from "../components/Navigationbar.tsx";
 import CommonFooter from "../components/Footer.tsx";
-import PrivacySidebar from "../components/privacy/PrivacySidebar.tsx";
+import PrivacySidebar from "../islands/PrivacySidebar.tsx";
 
 
 

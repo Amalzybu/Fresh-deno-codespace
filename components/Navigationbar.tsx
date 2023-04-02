@@ -7,11 +7,11 @@ export default function Header({ active }: Props) {
   const menus = [
     { name: "Home", href: "/" },
     { name: "About", href: "/components" },
-    { name: "Privacy & Policy", href: "/privacy-policy" },
+    { name: "Privacy", href: "/privacy-policy" },
   ];
 
   return (
-    <header class=" px-3 lg:px-14 h-12 lg:h-20 text-gray-500 flex justify-between items-center" >
+    <header class=" px-3 lg:px-14 h-12 lg:h-20 text-gray-500 flex justify-between border-4 border-l-indigo-500 items-center" >
       <div class="flex items-center flex-1">
         <IconAlien />
         
