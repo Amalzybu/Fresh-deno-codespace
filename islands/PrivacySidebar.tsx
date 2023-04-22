@@ -18,7 +18,7 @@ type Props = {
 
     const [content,setContent] = useState<Component>(new GetStarted({active:true}));
 
-    function changeContent(tag:String){
+    function changeContent(tag:string){
       switch(tag){
          case "get started":{
             setContent(new GetStarted({active:true}))
@@ -52,7 +52,7 @@ type Props = {
     return (
         <div class="grid grid-flow-col w-full auto-cols-max" >
 
-         <aside id="default-sidebar" class=" top-0 left-0 z-40 w-64 h-full border-4 border-l-indigo-500 transition-transform  sm:translate-x-0" aria-label="Sidebar">
+         <aside id="default-sidebar" class="hidden lg:block  top-0 left-0 z-40 w-64 h-full border-4 border-l-indigo-500 transition-transform " aria-label="Sidebar">
             <div class=" px-3  py-4 ">
                <ul class="space-y-2 font-medium" >
                {menus.map((name, index)=>(

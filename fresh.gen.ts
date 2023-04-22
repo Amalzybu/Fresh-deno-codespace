@@ -7,7 +7,8 @@ import * as $0 from "./routes/[name].tsx";
 import * as $1 from "./routes/api/joke.ts";
 import * as $2 from "./routes/index.tsx";
 import * as $3 from "./routes/privacy-policy.tsx";
-import * as $$0 from "./islands/PrivacySidebar.tsx";
+import * as $$0 from "./islands/HomeMenu.tsx";
+import * as $$1 from "./islands/PrivacySidebar.tsx";
 
 const manifest = {
   routes: {
@@ -17,7 +18,8 @@ const manifest = {
     "./routes/privacy-policy.tsx": $3,
   },
   islands: {
-    "./islands/PrivacySidebar.tsx": $$0,
+    "./islands/HomeMenu.tsx": $$0,
+    "./islands/PrivacySidebar.tsx": $$1,
   },
   baseUrl: import.meta.url,
   config,
