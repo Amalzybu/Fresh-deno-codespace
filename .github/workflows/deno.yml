@@ -37,6 +37,10 @@ jobs:
 
       - name: Run linter
         run: deno lint
+        
+      - name: Builders Sonar Analyze
+        uses: platformbuilders/sonar-action@v1.0.0
+
 
       - name: Run tests
         run: deno test service_tests.ts
