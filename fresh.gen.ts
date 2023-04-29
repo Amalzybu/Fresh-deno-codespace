@@ -10,6 +10,7 @@ import * as $3 from "./routes/privacy-policy.tsx";
 import * as $$0 from "./islands/HomeMenu.tsx";
 import * as $$1 from "./islands/LoginForm.tsx";
 import * as $$2 from "./islands/PrivacySidebar.tsx";
+import * as $$3 from "./islands/SignUp.tsx";
 
 const manifest = {
   routes: {
@@ -22,6 +23,7 @@ const manifest = {
     "./islands/HomeMenu.tsx": $$0,
     "./islands/LoginForm.tsx": $$1,
     "./islands/PrivacySidebar.tsx": $$2,
+    "./islands/SignUp.tsx": $$3,
   },
   baseUrl: import.meta.url,
   config,
