@@ -10,7 +10,7 @@ type Props = {
   export default function HomeMenu({ active }: Props) {
     const [showLogin,setShowLogin] = useState<string>("option");
     
-    let myComponent:Component = (<div class="p-4 mx-auto max-w-screen-md">
+    const myComponent:Component = (<div class="p-4 mx-auto max-w-screen-md">
       
     <h2 class="pt-5 md:pt-10 pb-3 md:pb-5 font-semibold text-center text-6xl md:text-8xl antialiased hover:subpixel-antialiased tracking-wide text-red-600 hover:text-sky-400 ">USE me WISE</h2>
     <div class="flex flex-col space-y-4 mt-8" style="grid-template-rows: auto 1fr auto;">
