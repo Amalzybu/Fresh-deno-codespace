@@ -1,17 +1,19 @@
 import { useState } from "preact/hooks";
 import { Component } from "preact";
+import LoginForm from "./LoginForm.tsx";
 
 type Props = {
     active: string;
   };
   export default function HomeMenu({ active }: Props) {
+    const [showLogin,setShowLogin] = useState<Boolean>(true);
     return (
     <main class=" mx-auto p-4 max-h-screen grid grid-cols-1 max-w-screen-lg p-4"  >
-    <div class="p-4 mx-auto max-w-screen-md">
+    { !showLogin ? <div class="p-4 mx-auto max-w-screen-md">
       
     <h2 class="pt-5 md:pt-10 pb-3 md:pb-5 font-semibold text-center text-6xl md:text-8xl antialiased hover:subpixel-antialiased tracking-wide text-red-600 hover:text-sky-400 ">USE me WISE</h2>
     <div class="flex flex-col space-y-4 mt-8" style="grid-template-rows: auto 1fr auto;">
-      <button type="button" class="place-content-center items-center w-full inline-block px-6 py-4 border-2 border-black text-red-600 font-bold text-xs leading-normal uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out flex space-x-4 auto-rows-min">
+      <button type="button" onclick={()=>setShowLogin(true)} class="place-content-center items-center w-full inline-block px-6 py-4 border-2 border-black text-red-600 font-bold text-xs leading-normal uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out flex space-x-4 auto-rows-min">
       <div class="grid grid-flow-col auto-cols-max md:auto-cols-max md:gap-48 sm:auto-cols-max sm:gap-12 lg:auto-cols-max lg:gap-48 ">
         <div ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="w-4 h-4">
           <path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/>
@@ -32,6 +34,8 @@ type Props = {
         </button>
       </div>
       
-    </div>
+    </div> : 
+    <LoginForm/>
+    }
     </main>);
   }
