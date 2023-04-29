@@ -6,7 +6,7 @@ type Props = {
     active: string;
   };
   export default function HomeMenu({ active }: Props) {
-    const [showLogin,setShowLogin] = useState<boolean>(true);
+    const [showLogin,setShowLogin] = useState<boolean>(false);
     return (
     <main class=" mx-auto p-4 max-h-screen grid grid-cols-1 max-w-screen-lg p-4"  >
     { !showLogin ? <div class="p-4 mx-auto max-w-screen-md">
@@ -35,7 +35,7 @@ type Props = {
       </div>
       
     </div> : 
-    <LoginForm/>
+    <LoginForm setShowLogin={setShowLogin} />
     }
     </main>);
   }
