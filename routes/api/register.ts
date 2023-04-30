@@ -1,7 +1,7 @@
 import { HandlerContext } from "$fresh/server.ts";
-import { client} from "../../config/DbConnection.ts";
+// import { client} from "../../config/DbConnection.ts";
 import  "environment";
-import { User} from "../../models/User.ts";
+// import { User} from "../../models/User.ts";
 
 import { validate,required,isEmail,isString} from "validator"
 
@@ -38,12 +38,6 @@ export const handler: Handlers = {
             data: {confirmPassword:"mismacthed password"},
           } );
         }
-        await User.create([
-          {
-            departure: 'Paris',
-            destination: 'Tokyo',
-          }
-        ]);
         // const result = await client.queryArray("SELECT * FROM statement;");
         const y =Deno.env.get("author");
         return Response.json( {message:"signup completed successfully"}, {

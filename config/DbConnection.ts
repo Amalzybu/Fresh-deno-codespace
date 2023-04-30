@@ -1,6 +1,6 @@
 import  "environment";
 import { Database, PostgresConnector } from 'postgres';
-import { User} from "../models/User.ts";
+// import { User} from "../models/User.ts";
 
 const connector = new PostgresConnector({
   database: Deno.env.get("database"),
