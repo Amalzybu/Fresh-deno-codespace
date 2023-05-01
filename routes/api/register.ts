@@ -13,7 +13,7 @@ export const handler: Handlers = {
         statusText: "Bad Gateway",
       } );
   },
-  async POST(req: Request, ctx: HandlerContext) {
+  async POST(req: Request) {
     const form = await req.json();
     console.log(form); 
     if(form){
