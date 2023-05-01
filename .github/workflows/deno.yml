@@ -16,6 +16,7 @@ on:
 
 permissions:
   contents: read
+  id-token: write # Needed for auth with Deno Deploy
 
 jobs:
   test:
@@ -46,3 +47,11 @@ jobs:
 
       - name: Run tests
         run: deno test service_tests.ts
+
+      # TODO: add a build step here
+
+      - name: Upload to Deno Deploy
+        uses: denoland/deployctl@v1
+        with:
+          project: "use-me-wise"
+          entrypoint: "./main.ts" # TODO: update entrypoint
