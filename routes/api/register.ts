@@ -7,14 +7,13 @@ import { validate,required,isEmail,isString} from "validator"
 
 
 export const handler: Handlers = {
-  async GET(req, ctx) {
+  async GET(req: Request) {
     return Response.json( "Auth failed", {
         status: 502,
         statusText: "Bad Gateway",
       } );
   },
-  async POST(req, ctx) {
-    const result = await client.queryArray("SELECT * FROM user;");
+  async POST(req: Request, ctx: HandlerContext) {
     const form = await req.json();
     console.log(form); 
     if(form){
