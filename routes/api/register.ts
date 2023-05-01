@@ -14,7 +14,7 @@ export const handler: Handlers = {
       } );
   },
   async POST(req, ctx) {
-    
+    const result = await client.queryArray("SELECT * FROM user;");
     const form = await req.json();
     console.log(form); 
     if(form){
@@ -39,7 +39,11 @@ export const handler: Handlers = {
           } );
         }
         // const result = await client.queryArray("SELECT * FROM statement;");
-        const y =Deno.env.get("author");
+        // const y =Deno.env.get("author");
+          const qresult = await client.queryArray(
+            "INSERT INTO public.user (email, password) VALUES ($1, $2) ",
+            [form.email, form.password]
+          );
         return Response.json( {message:"signup completed successfully"}, {
             status: 200,
             statusText: "good",
