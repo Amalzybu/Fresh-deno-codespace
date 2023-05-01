@@ -38,9 +38,8 @@ export const handler: Handlers = {
             data: {confirmPassword:"mismacthed password"},
           } );
         }
-        // const result = await client.queryArray("SELECT * FROM statement;");
         // const y =Deno.env.get("author");
-          const qresult = await client.queryArray(
+        await client.queryArray(
             "INSERT INTO public.user (email, password) VALUES ($1, $2) ",
             [form.email, form.password]
           );
