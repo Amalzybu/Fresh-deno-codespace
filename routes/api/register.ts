@@ -7,7 +7,7 @@ import { validate,required,isEmail,isString} from "validator"
 
 
 export const handler: Handlers = {
-  async GET(req: Request) {
+  GET() {
     return Response.json( "Auth failed", {
         status: 502,
         statusText: "Bad Gateway",
