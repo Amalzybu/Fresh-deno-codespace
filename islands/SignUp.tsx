@@ -1,5 +1,6 @@
 import { useState } from "preact/hooks";
 import { Component ,FunctionComponent} from "preact";
+import axiod from "axiod";
 
 
 type Props = {
@@ -7,8 +8,15 @@ type Props = {
     setShowLogin:FunctionComponent;
   };
   export default function SignUp({ active,setShowLogin }: Props) {
-
-
+    let email ="";
+    let password = "";
+    let confirmPassword = "";
+    let signup =async ()=>{
+        console.log()
+        let af = await axiod.get(Deno.env.get("baseurl")).catch((err)=>{
+            console.log("hhgggggg ",err)
+        });
+    };
     return (
     <div class="flex items-center justify-center shadow-lg">
         

@@ -1,8 +1,11 @@
 import { client} from "../../config/DbConnection.ts";
 import  "environment";
+
 // import { User} from "../../models/User.ts";
 
 import { validate,required,isEmail,isString} from "validator"
+import * as bcrypt from "https://deno.land/x/bcrypt/mod.ts";
+
 
 
 export const handler: Handlers = {
@@ -13,6 +16,7 @@ export const handler: Handlers = {
       } );
   },
   async POST(req: Request) {
+    try{
     const form = await req.json();
     console.log(form); 
     if(form){
@@ -37,9 +41,11 @@ export const handler: Handlers = {
           } );
         }
         // const y =Deno.env.get("author");
+        await client.connect()
+        let hash = await bcrypt.hash(form.password);
         await client.queryArray(
             "INSERT INTO public.user (email, password) VALUES ($1, $2) ",
-            [form.email, form.password]
+            [form.email, hash]
           );
         return Response.json( {message:"signup completed successfully"}, {
             status: 200,
@@ -52,6 +58,12 @@ export const handler: Handlers = {
             statusText: "good",
         } );
     }
-    
+  }
+  catch(e:Exception){
+    return Response.json( {message:"invalid request"}, {
+      status: 502,
+      statusText: "good",
+  } );
+  }
   },
 };
