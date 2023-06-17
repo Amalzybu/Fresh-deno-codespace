@@ -60,6 +60,7 @@ export const handler: Handlers = {
     }
   }
   catch(e:Exception){
+    console.debug("find production bug ----------------- ",e);
     return Response.json( {message:"invalid request ",e}, {
       status: 502,
       statusText: "good",
