@@ -1,4 +1,4 @@
-import { useState } from "preact/hooks";
+import { useState,useEffect  } from "preact/hooks";
 import { Component ,FunctionComponent} from "preact";
 import axiod from "axiod";
 
@@ -8,14 +8,24 @@ type Props = {
     setShowLogin:FunctionComponent;
   };
   export default function SignUp({ active,setShowLogin }: Props) {
-    let email ="";
-    let password = "";
+    let email="";
+    let password="";
     let confirmPassword = "";
-    let signup =async ()=>{
-        console.log()
-        let af = await axiod.get(Deno.env.get("baseurl")).catch((err)=>{
+
+
+
+
+    const signup =async ()=>{
+        console.debug("ssssssssssssss ",email,password,confirmPassword)
+        const af = await axiod.post("/api/register",{
+            email:email,
+            password:password,
+            confirmPassword:confirmPassword
+
+        }).catch((err)=>{
             console.log("hhgggggg ",err)
         });
+        console.debug("gggggggggggggggggggggggggg ",af)
     };
     return (
     <div class="flex items-center justify-center shadow-lg">
@@ -37,21 +47,21 @@ type Props = {
             <div class="mt-4">
                 <div>
                     <label class="block" for="email">Email</label>
-                    <input type="text" placeholder="Email" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"></input>
+                    <input type="text" placeholder="Email" value={email} onInput={e =>email = e.target.value} class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"></input>
                     <span class="text-xs tracking-wide text-red-600">Email field is required </span>
                 </div>
                 <div class="mt-4">
                     <label class="block">Password</label>
-                            <input type="password" placeholder="Password" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
+                            <input type="password" value={password} onInput={e => password = e.target.value}   placeholder="Password" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
                                 </input>
                 </div>
                 <div class="mt-4">
                     <label class="block">Password</label>
-                            <input type="password" placeholder="Password" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
+                            <input type="password" placeholder="Password" value={confirmPassword} onInput={e => confirmPassword=e.target.value} class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
                                 </input>
                 </div>
                 <div class="flex items-baseline justify-between">
-                    <button class="px-6 py-2 mt-4 text-white bg-blue-600 rounded-lg hover:bg-blue-900">Login</button>
+                    <button type="button" class="px-6 py-2 mt-4 text-white bg-blue-600 rounded-lg hover:bg-blue-900" onclick={signup}>sign up</button>
                     <a href="#" class="text-sm text-blue-600 hover:underline">Forgot password?</a>
                 </div>
             </div>

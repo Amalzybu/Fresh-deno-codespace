@@ -9,7 +9,8 @@ type Props = {
   };
   export default function HomeMenu({ active }: Props) {
     const [showLogin,setShowLogin] = useState<string>("option");
-    
+    const signUp =new SignUp({active: "string",setShowLogin:setShowLogin});
+    const loginForm =new LoginForm({active: "string",setShowLogin:setShowLogin});
     const myComponent:Component = (<div class="p-4 mx-auto max-w-screen-md">
       
     <h2 class="pt-5 md:pt-10 pb-3 md:pb-5 font-semibold text-center text-6xl md:text-8xl antialiased hover:subpixel-antialiased tracking-wide text-red-600 hover:text-sky-400 ">USE me WISE</h2>
@@ -45,11 +46,11 @@ useEffect(() => {
       break;
     }
     case "login":{
-      setContent(LoginForm({active: "string",setShowLogin:setShowLogin}))
+      setContent(loginForm)
       break;
     }
     case "signup":{
-      setContent(SignUp({active: "string",setShowLogin:setShowLogin}))
+      setContent(signUp)
       break;
     }
     default:{

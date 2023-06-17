@@ -9,6 +9,7 @@ type Props = {
   export default function LoginForm({ active,setShowLogin }: Props) {
 
 
+
     return (
     <div class="flex items-center justify-center shadow-lg">
         
@@ -25,16 +26,16 @@ type Props = {
             </div>
         </div>
         <h3 class="text-2xl font-bold text-center">Login to your account</h3>
-        <form action="">
+        <form action="/api/login" method="post">
             <div class="mt-4">
                 <div>
                     <label class="block" for="email">Email</label>
-                    <input type="text" placeholder="Email" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"></input>
+                    <input type="text" placeholder="Email" name="email" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"></input>
                     <span class="text-xs tracking-wide text-red-600">Email field is required </span>
                 </div>
                 <div class="mt-4">
                     <label class="block">Password</label>
-                            <input type="password" placeholder="Password" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
+                            <input type="password" placeholder="Password" name="password" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600">
                                 </input>
                 </div>
                 <div class="flex items-baseline justify-between">

@@ -4,7 +4,7 @@ import  "environment";
 // import { User} from "../../models/User.ts";
 
 import { validate,required,isEmail,isString} from "validator"
-import * as bcrypt from "https://deno.land/x/bcrypt/mod.ts";
+import * as bcrypt from "bcrypt";
 
 
 
@@ -42,7 +42,7 @@ export const handler: Handlers = {
         }
         // const y =Deno.env.get("author");
         await client.connect()
-        let hash = await bcrypt.hash(form.password);
+        const hash = await bcrypt.hash(form.password);
         await client.queryArray(
             "INSERT INTO public.user (email, password) VALUES ($1, $2) ",
             [form.email, hash]
@@ -60,7 +60,7 @@ export const handler: Handlers = {
     }
   }
   catch(e:Exception){
-    return Response.json( {message:"invalid request"}, {
+    return Response.json( {message:"invalid request ",e}, {
       status: 502,
       statusText: "good",
   } );
