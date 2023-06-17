@@ -13,36 +13,24 @@ export async function handler(
 
 
 
-  const withSession = [
-    "/user/dashboard",
-    "/register",
-    "/_frsh",
-    "/api",
-    "/favicon.ico"
-  ]
+  const { pathname } = new URL(req.url)
+    console.debug("middleware2---------------------------- ",pathname);
+
     const cookies = getCookies(req.headers);
-    const { pathname } = new URL(req.url)
-    console.debug("middleware1---------------------------- ",pathname);
-    // console.debug("URL ----------------------------");
+ 
     
     
-    
-    
-//   ctx.state.data = "myData";
+  // ctx.state.data = "myData";
   const resp = await ctx.next();
-  const allowPass = withSession.find((x)=>{
-    return pathname.includes(x)
-  })
-  if(allowPass){
-    return resp;
-  }
   if(cookies?.auth){
     // console.debug("----------------------------",cookies,cookies?.auth);
     const   payload   = decode(cookies?.auth)[1];
     console.debug("payload----------------------------",payload);
-    return new Response("", { status: 307,headers: { Location: "/user/dashboard" }});
+    return resp;
    
   }
 //   resp.headers.set("server", "fresh server");
-  return resp;
+  // return resp
+   return new Response("", { status: 307,headers: { Location: "/" }});
+
 }

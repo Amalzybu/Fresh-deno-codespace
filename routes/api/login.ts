@@ -67,7 +67,7 @@ export const handler: Handlers = {
           setCookie(headers, {
             name: "auth",
             value: jwt, // this should be a unique value for each session
-            maxAge: 120,
+            maxAge: 1200,
             sameSite: "Lax", // this is important to prevent CSRF attacks
             domain: url.hostname,
             path: "/",
