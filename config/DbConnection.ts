@@ -8,5 +8,8 @@ const client = new Client({
     port: Deno.env.get("port"),
     });
 
-await client.connect()
-export {client}
+async function getConnection(){
+    await client.connect()
+    return client;
+}
+export {getConnection}

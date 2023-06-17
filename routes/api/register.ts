@@ -1,10 +1,10 @@
-import { client} from "../../config/DbConnection.ts";
+import { getConnection} from "../../config/DbConnection.ts";
 import  "environment";
 
 // import { User} from "../../models/User.ts";
 
 import { validate,required,isEmail,isString} from "validator"
-import * as bcrypt from "bcrypt";
+import {Base64}  from "https://deno.land/x/bb64/mod.ts";
 
 
 
@@ -41,8 +41,10 @@ export const handler: Handlers = {
           } );
         }
         // const y =Deno.env.get("author");
-        await client.connect()
-        const hash = await bcrypt.hash(form.password);
+        const client =await getConnection()
+        const hash = Base64.fromString(form.password).toString();
+        const dbPassword = Base64.fromBase64String(hash).toString();
+        console.debug("------------------------------------ ",hash,dbPassword);
         await client.queryArray(
             "INSERT INTO public.user (email, password) VALUES ($1, $2) ",
             [form.email, hash]

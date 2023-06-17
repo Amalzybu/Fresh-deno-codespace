@@ -8,8 +8,9 @@ import * as $1 from "./routes/_middleware.ts";
 import * as $2 from "./routes/api/joke.ts";
 import * as $3 from "./routes/api/login.ts";
 import * as $4 from "./routes/api/register.ts";
-import * as $5 from "./routes/index.tsx";
-import * as $6 from "./routes/privacy-policy.tsx";
+import * as $5 from "./routes/dashboard.tsx";
+import * as $6 from "./routes/index.tsx";
+import * as $7 from "./routes/privacy-policy.tsx";
 import * as $$0 from "./islands/HomeMenu.tsx";
 import * as $$1 from "./islands/LoginForm.tsx";
 import * as $$2 from "./islands/PrivacySidebar.tsx";
@@ -22,8 +23,9 @@ const manifest = {
     "./routes/api/joke.ts": $2,
     "./routes/api/login.ts": $3,
     "./routes/api/register.ts": $4,
-    "./routes/index.tsx": $5,
-    "./routes/privacy-policy.tsx": $6,
+    "./routes/dashboard.tsx": $5,
+    "./routes/index.tsx": $6,
+    "./routes/privacy-policy.tsx": $7,
   },
   islands: {
     "./islands/HomeMenu.tsx": $$0,

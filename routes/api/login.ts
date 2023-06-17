@@ -1,12 +1,12 @@
-import { client} from "../../config/DbConnection.ts";
+import { getConnection} from "../../config/DbConnection.ts";
 import  "environment";
 // import {decode,encode} from "base64"
 // import { User} from "../../models/User.ts";
 
 import { validate,required,isEmail,isString} from "validator"
-// import * as bcrypt from "bcrypt";
+import {Base64}  from "https://deno.land/x/bb64/mod.ts";
 import { setCookie } from "std/http/cookie.ts";
-// import { create } from "djwt"
+import { create } from "djwt"
 
 
 
@@ -46,21 +46,27 @@ export const handler: Handlers = {
 
         
         // const y =Deno.env.get("author");
-        await client.connect()
+        const client = await getConnection();
         const { rows: result } = await client.queryObject(
             "select * from public.user where email = $1 limit 1",
             [email]
           );
-          console.debug("dfgfgdhfg ",result)
-        // const jwt = await create({ alg: "HS512", typ: "JWT" }, { foo: "bar" }, "secret")
-        // const isPasswordCorrect = await bcrypt.compare(password, result[0].password);
-        const isPasswordCorrect = true;
+          const key = await crypto.subtle.generateKey(
+            { name: "HMAC", hash: "SHA-512" },
+            true,
+            ["sign", "verify"],
+          );
+
+        const jwt = await create({ alg: "HS512", typ: "JWT" }, { foo: "bar" }, key)
+        console.debug("jwt ------------",jwt)
+        const dbPassword = Base64.fromBase64String(result[0].password).toString();
+        const isPasswordCorrect = dbPassword==password;
         if(isPasswordCorrect){
           const url = new URL(req.url);
           const headers = new Headers();
           setCookie(headers, {
             name: "auth",
-            value: "jwt", // this should be a unique value for each session
+            value: jwt, // this should be a unique value for each session
             maxAge: 120,
             sameSite: "Lax", // this is important to prevent CSRF attacks
             domain: url.hostname,
