@@ -13,11 +13,12 @@ import * as $6 from "./routes/index.tsx";
 import * as $7 from "./routes/privacy-policy.tsx";
 import * as $8 from "./routes/user/_middleware.ts";
 import * as $9 from "./routes/user/dashboard.tsx";
-import * as $$0 from "./islands/HomeMenu.tsx";
-import * as $$1 from "./islands/LoginForm.tsx";
-import * as $$2 from "./islands/PrivacySidebar.tsx";
-import * as $$3 from "./islands/SignUp.tsx";
-import * as $$4 from "./islands/UserSidebar.tsx";
+import * as $$0 from "./islands/CreateTask.tsx";
+import * as $$1 from "./islands/HomeMenu.tsx";
+import * as $$2 from "./islands/LoginForm.tsx";
+import * as $$3 from "./islands/PrivacySidebar.tsx";
+import * as $$4 from "./islands/SignUp.tsx";
+import * as $$5 from "./islands/UserSidebar.tsx";
 
 const manifest = {
   routes: {
@@ -33,11 +34,12 @@ const manifest = {
     "./routes/user/dashboard.tsx": $9,
   },
   islands: {
-    "./islands/HomeMenu.tsx": $$0,
-    "./islands/LoginForm.tsx": $$1,
-    "./islands/PrivacySidebar.tsx": $$2,
-    "./islands/SignUp.tsx": $$3,
-    "./islands/UserSidebar.tsx": $$4,
+    "./islands/CreateTask.tsx": $$0,
+    "./islands/HomeMenu.tsx": $$1,
+    "./islands/LoginForm.tsx": $$2,
+    "./islands/PrivacySidebar.tsx": $$3,
+    "./islands/SignUp.tsx": $$4,
+    "./islands/UserSidebar.tsx": $$5,
   },
   baseUrl: import.meta.url,
   config,

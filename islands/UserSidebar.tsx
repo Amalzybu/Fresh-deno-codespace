@@ -1,5 +1,6 @@
 import { useState } from "preact/hooks";
 import { Component } from "preact";
+import CreateTask from "./CreateTask.tsx";
 
 type Props = {
     active: string;
@@ -15,13 +16,13 @@ type Props = {
          "Logout"
     ]);
     console.debug("ffffffffffffffffffffffffffffffffffff")
-    const [content,setContent] = useState<Component>();
+    const [content,setContent] = useState<Component>(new CreateTask({active:true}));
 
    const changeContent =  (tag)=>{
         console.debug("gggggggggggggggggggggggggg ")
       switch(tag){
          case "Create Task":{
-            // setContent(new GetStarted({active:true}))
+            setContent(new CreateTask({active:true}))
             break;
          }
          case "Show My Tasks":{
