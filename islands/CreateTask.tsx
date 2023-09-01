@@ -28,28 +28,28 @@ flex flex-col  w-screen sm:px-6 md:pr-[10px] lg:pr-[20%]">
   </label></div>
   <div><label class="block">
     <span class="block text-sm font-medium text-slate-700">hours needed</span>
-    <input type="email" class="peer mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"/>
+    <input type="number" class="peer mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"/>
     <p class="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
       Please provide a valid email address.
     </p>
   </label></div>
   <div><label class="block">
     <span class="block text-sm font-medium text-slate-700">maximum hours for completion</span>
-    <input type="email" class="peer mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"/>
+    <input type="number" class="peer mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"/>
     <p class="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
       Please provide a valid email address.
     </p>
   </label></div>
   <div><label class="block">
     <span class="block text-sm font-medium text-slate-700">points</span>
-    <input type="email" class="peer mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"/>
+    <input type="number" class="peer mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"/>
     <p class="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
       Please provide a valid email address.
     </p>
   </label></div>
   <div><label class="block">
     <span class="block text-sm font-medium text-slate-700">Description</span>
-    <input type="email" class="peer mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"/>
+    <textarea  class="peer mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"/>
     <p class="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
       Please provide a valid email address.
     </p>

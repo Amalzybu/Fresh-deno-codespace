@@ -48,7 +48,7 @@ export const handler: Handlers = {
         // const y =Deno.env.get("author");
         const client = await getConnection();
         const { rows: result } = await client.queryObject(
-            "select * from public.user where email = $1 limit 1",
+            "select id,email,created_at,password from public.user where email = $1 limit 1",
             [email]
           );
           const key = await crypto.subtle.generateKey(
@@ -56,9 +56,10 @@ export const handler: Handlers = {
             true,
             ["sign", "verify"],
           );
-
-        const jwt = await create({ alg: "HS512", typ: "JWT" }, { foo: "bar" }, key)
-        console.debug("jwt ------------",jwt)
+          console.debug("jwt ------------",result[0])
+          result[0].id = typeof result[0].id  === 'bigint'? result[0].id.toString(): result[0].id ;
+        const jwt = await create({ alg: "HS512", typ: "JWT" }, { user: result[0] }, key)
+        console.debug("jwt ------------",result[0])
         const dbPassword = Base64.fromBase64String(result[0].password).toString();
         const isPasswordCorrect = dbPassword==password;
         if(isPasswordCorrect){

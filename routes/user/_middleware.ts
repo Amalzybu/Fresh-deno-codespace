@@ -20,12 +20,13 @@ export async function handler(
  
     
     
-  // ctx.state.data = "myData";
+  
   const resp = await ctx.next();
   if(cookies?.auth){
     // console.debug("----------------------------",cookies,cookies?.auth);
     const   payload   = decode(cookies?.auth)[1];
-    console.debug("payload----------------------------",payload);
+    ctx.state.data = payload;
+    console.debug("payload------------------11111----------",payload);
     return resp;
    
   }

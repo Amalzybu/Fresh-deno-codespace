@@ -3,16 +3,18 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import config from "./deno.json" assert { type: "json" };
-import * as $0 from "./routes/[name].tsx";
-import * as $1 from "./routes/_middleware.ts";
-import * as $2 from "./routes/api/joke.ts";
-import * as $3 from "./routes/api/login.ts";
-import * as $4 from "./routes/api/logout.ts";
-import * as $5 from "./routes/api/register.ts";
-import * as $6 from "./routes/index.tsx";
-import * as $7 from "./routes/privacy-policy.tsx";
-import * as $8 from "./routes/user/_middleware.ts";
-import * as $9 from "./routes/user/dashboard.tsx";
+import * as $0 from "./routes/404.tsx";
+import * as $1 from "./routes/[name].tsx";
+import * as $2 from "./routes/_middleware.ts";
+import * as $3 from "./routes/api/joke.ts";
+import * as $4 from "./routes/api/login.ts";
+import * as $5 from "./routes/api/logout.ts";
+import * as $6 from "./routes/api/register.ts";
+import * as $7 from "./routes/api/task/create.ts";
+import * as $8 from "./routes/index.tsx";
+import * as $9 from "./routes/privacy-policy.tsx";
+import * as $10 from "./routes/user/_middleware.ts";
+import * as $11 from "./routes/user/dashboard.tsx";
 import * as $$0 from "./islands/CreateTask.tsx";
 import * as $$1 from "./islands/HomeMenu.tsx";
 import * as $$2 from "./islands/LoginForm.tsx";
@@ -22,16 +24,18 @@ import * as $$5 from "./islands/UserSidebar.tsx";
 
 const manifest = {
   routes: {
-    "./routes/[name].tsx": $0,
-    "./routes/_middleware.ts": $1,
-    "./routes/api/joke.ts": $2,
-    "./routes/api/login.ts": $3,
-    "./routes/api/logout.ts": $4,
-    "./routes/api/register.ts": $5,
-    "./routes/index.tsx": $6,
-    "./routes/privacy-policy.tsx": $7,
-    "./routes/user/_middleware.ts": $8,
-    "./routes/user/dashboard.tsx": $9,
+    "./routes/404.tsx": $0,
+    "./routes/[name].tsx": $1,
+    "./routes/_middleware.ts": $2,
+    "./routes/api/joke.ts": $3,
+    "./routes/api/login.ts": $4,
+    "./routes/api/logout.ts": $5,
+    "./routes/api/register.ts": $6,
+    "./routes/api/task/create.ts": $7,
+    "./routes/index.tsx": $8,
+    "./routes/privacy-policy.tsx": $9,
+    "./routes/user/_middleware.ts": $10,
+    "./routes/user/dashboard.tsx": $11,
   },
   islands: {
     "./islands/CreateTask.tsx": $$0,

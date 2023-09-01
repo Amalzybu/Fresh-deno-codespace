@@ -11,7 +11,8 @@ import { deleteCookie } from "std/http/cookie.ts";
 
 
 export const handler: Handlers = {
-  GET(req: Request) {
+  GET(req: Request,ctx) {
+    console.debug("44444444444444444444444444444444444444444 ",ctx)
     const url = new URL(req.url);
     const headers = new Headers(req.headers);
     deleteCookie(headers, "auth", { path: "/", domain: url.hostname });
