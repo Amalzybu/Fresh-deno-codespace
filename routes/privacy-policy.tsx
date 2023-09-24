@@ -1,6 +1,6 @@
 import { Head } from "$fresh/runtime.ts";
 
-import Header from "../components/Navigationbar.tsx";
+import Header from "../islands/Navigationbar.tsx";
 import CommonFooter from "../components/Footer.tsx";
 import PrivacySidebar from "../islands/PrivacySidebar.tsx";
 
